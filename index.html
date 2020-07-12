@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<!-- This is the head of the document-->
+<head>
+    <title>Justin Perry, programmer</title>
+    <meta charset="UTF-8"><!--Declare character set-->
+    <link rel="stylesheet" type="text/css" href="./css/Portfolio.css">
+    <!--Link for Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+</head>
+<!--End head sections-->
+
+<!--Begin the Body of the website-->
+<body class="background">
+
+  <!--This is the script for the fade in effect, Jquery-->
+  <script>
+    document.body.className += 'fade-out';
+    $(function () {
+      $('body').removeClass('fade-out');
+    });
+  </script>
+
+  <!-- Begin navbar/navigation -->
+  <div class="Navbar">
+    <a class="active" href="#Home">HOME</a>
+    <a href="#About">ABOUT</a>
+    <a href="#Github">GITHUB</a>
+    <a onclick="openForm()">CONTACT</a>
+    <a href="https://japerrypython.wordpress.com">BLOG</a>
+  </div>
+
+  <!--This will close the contact box upon hitting the cancel button-->
+  <div class="btn cancel" onclick="closeForm()">
+    <!-- End navbar/navigation -->
+    <!--This is the break between navbar and heading 1-->
+    <br>
+    <br>
+
+    <!--This is the video playing-->
+    <div id="Home">
+      <br>
+      <!--These breaks add space between nav bar and first heading-->
+      <br>
+      <video autoplay muted loop id="Typing_Video">
+        <source src="./video/dark_earth.mp4" type="video/mp4">
+        This video is not supported <!--Displays if video fails to run-->
+      </video>
+    </div>
+
+    <!--End video playing-->
+    <!--This is the video text after the nav bar-->
+    <div class="Video_Text">
+      <h1>Justin Perry's Portfolio</h1>
+      <p>
+        <strong>
+          <center>
+            <!--This is s good place for a quote and blurb about your self-->
+            <q>
+              The computer programmer is a creator of universes for which he alone is the lawgiver.
+              <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
+              <br>field of battle and to command such unswervingly dutiful actors or troops.
+            </q>
+            <br>-Joseph Weizenbaum<br>
+            <br>
+            Welcome to Justin Perry's portfolio website.<br>
+            <br>Thank you for stopping by and enjoy my code!
+          </center>
+        </strong>
+      </p>
+    </div>
+    <!--End Text over video-->
+    <!--This is the slideshow section HTML-->
+    <div id="slideShow">
+      <div id="slideshowBackground">
+        <div id="slideshowContainer">
+
+          <div class="mySlides fade">
+            <div class="slideNumber">1/5</div>
+            <img class="slideShowImages" src="./images/justin_photo.jpeg" alt="image of me" style="width: 100%;">
+            <div class="text">I'm available to assist you on your project</div>
+          </div>
+          <div class="mySlides fade">
+            <div class="slideNumber">2/5</div>
+            <img class="slideShowImages" src="./images/HTML_CSS_and_JavaScript.jpeg" alt="image1" style="width: 100%;">
+            <div class="text">I am a full stack web developer, <br>Trained in:<br>HTML, CSS and Javascript,</div>
+          </div>
+          <div class="mySlides fade">
+            <div class="slideNumber">3/5</div>
+            <img class="slideShowImages" src="./images/Python.png" alt="image1" style="width: 100%;">
+            <div class="text">the popular programming language Python,</div>
+          </div>
+          <div class="mySlides fade">
+            <div class="slideNumber">4/5</div>
+            <img class="slideShowImages" src="./images/SQL_and_Database.jpg" alt="image1" style="width: 100%;">
+            <div class="text">back end development, databases and SQL.</div>
+          </div>
+          <div class="mySlides fade">
+            <div class="slideNumber">5/5</div>
+            <img class="slideShowImages" src="./images/Contact.jpg" alt="image1" style="width: 100%;">
+            <div class="text">
+              <a onclick="openForm()" href="#Contact" style="color: #E94B3CFF;">Contact me now!</a>
+            </div>
+          </div>
+          <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align: center;">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  //this is inline JS to be sure we give it precedence over the other JS
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+    <!--End Slideshow Section-->
+    <!--Begin About me Section-->
+    <div class="Row" id="About">
+      <div class="Column_2">
+        <!--Left-->
+        <img src="./images/jp_ski_about.jpg" alt="dev photo">
+      </div>
+
+      <div class="Column_1">
+        <!--right-->
+        <h1>About Justin</h1>
+        <p>I am a software developer with a specialization in Python and experience with the Django Framework. <br><br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Python bootcamp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL and Functional Python Programming. <br><br>I am a full-stack developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!</p>
+      </div>
+    </div>
+    <!-- End About me section-->
+    <!--This is the link square to my github repo-->
+    <div class="Row" id="Github">
+      <div class="Column_1">
+        <!-- Left column -->
+        <h1>GitHub</h1>
+        <p>
+          You can view my my GitHub profile here:<br>
+          <center><a href="https://github.com/Jboogs/full-python-scripts">Justin's GitHub</a></center>
+        </p>
+      </div>
+
+      <div class="Column_2">
+        <!-- Right column -->
+        <a href="https://github.com/Jboogs/full-python-scripts">
+          <img src="./images/github_2.jpg" alt="GitHub">
+        </a>
+      </div>
+    </div>
+    <!--End github repo-->
+
+  </div><!--This is the closing DIV from the close function div-->
+  <!--Begin Contact Form-->
+  <div id="Contact">
+    <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+    <div class="form-popup" id="myForm">
+      <form action="https://formspree.io/jadamsperry@gmail.com" method="POST" class="form-container">
+        <h1>Contact</h1>
+        <label for="name" class="txt"><b>Name</b></label>
+        <input type="text" placeholder="Name Here..." name="name" required>
+        <label for="phone" class="txt"><b>Phone</b></label>
+        <input type="text" placeholder="Phone Number Here..." name="phone" required>
+        <label for="email" class="txt"><b>Email</b></label>
+        <input type="text" placeholder="Email Here..." name="email" required>
+        <label for="message" class="txt"><b>Message</b></label>
+        <input type="text" placeholder="Type your message here..." name="message">
+
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+      </form>
+    </div>
+  </div>
+  <!--End Contact Form-->
+  <!--This is the footer-->
+  <footer>
+    <p>
+      &copy Justin Perry Solutions Inc.,  <a href="http://justinpcoding.com">Portfolio Website</a>
+    </p>
+  </footer>
+  <!--End footer-->
+
+<script src="./JS/portfolio_JS.js"></script>
+</body>
+<!-- End body of the website  -->
+
+</html>
